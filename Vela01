@@ -111,3 +111,89 @@ E’ possibile contabilizzare le quote di qualsiasi tipo di storico (provvisorio
 La funzione dà inoltre la possibilità di eliminare completamente una contabilizzazione.
 Tutti gli storici che sono entrati a far parte di una contabilizzazione non possono più essere modificati ma solo interrogati.
 Nella gestione dello storico è stato aggiunto un bottone per interrogare la transazione contabile generata da tale funzione.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+MONOGRAFIE BENI A LOTTI
+
+
+1	INTRODUZIONE
+Un bene può essere gestito singolarmente oppure come lotto.
+Un esemplificazione di tale concetto è rappresentato da un acquisto di 100 sedie uguali.
+Tale acquisto può essere gestito con il caricamento di 100 anagrafiche cespiti oppure con il caricamento di una sola anagrafica (rappresentante delle 100 sedie).
+Nel secondo caso entra in gioco il concetto di lotto cioè una sola anagrafica composta da 100 pezzi tutti uguali, ogni pezzo può essere rappresentato da una  matricola.
+
+Il lotto ha due tipi di gestione:
+•	solo informativa, quindi posso dettagliare le singole matricole e indicare un ubicazione per singola matricola
+•	Completa, quindi oltre alle infomazioni anagrafiche gestire le quantità ed i valori per singola matricola. Questo può essere interessante quando la matricola è un gruppo di pezzi (esempio acquisto 110 sedie e ho la necessità di indicare il numero di sedie per ogni singola sede)
+
+La gestione completa dei lotti deve permette:
+1.	di dettagliare la composizione di un singolo bene indicando matricola, ubicazione e una descrizione
+2.	di poter indicare in fase di acquisizione di un bene a lotti le quantità di ogni singola matricola (nel caso la matricola rappresenti un insieme di pezzi allocati in una determinata ubicazione)
+3.	di poter indicare in fase di dismissione di un bene a lotti le matricole dimesse ed eventualmente le quantità
+4.	analizzare le informazioni quali valore di bilancio, fondi, quote di ammortamento, per singola matricola.
+ 
+
+2	GESTIONE ANAGRAFICA BENI
+
+Per ogni singolo bene è possibile definire la tipologia di gestione dei lotti.
+I valori ammessi sono:
+
+•	0 - No gestione lotti
+•	1 - Si gestione lotti solo informativa
+•	2 - Si gestione lotti completa
+
+Nel primo caso (0 - No gestione lotti) il bene è rappresentato da un unico pezzo fisico identificato dal codice cespite.
+I valori sia come movimenti sia come storici sono attribuiti al codice del bene.
+Nel secondo caso (1 - Si gestione lotti solo informativa) il bene è rappresentato da un insieme di pezzi omogenei identificati dalla matricola.
+Per ogni matricola è possibile indicare una descrizione ed una ubicazione.
+I valori sia come movimenti sia come storici sono attribuiti al codice del bene.
+Nel terzo caso (1 - Si gestione lotti completa) il bene è rappresentato da un insieme di pezzi omogenei identificati dalla matricola.
+Per ogni matricola è possibile indicare una descrizione ed una ubicazione.
+I valori sia come movimenti sia come storici sono attribuiti al codice del bene ed alle singole matricole.
+
+
+3	GESTIONE MOVIMENTI
+
+E' stata implementa la 'Gestione dei movimenti' per poter inserire e gestire le quantità per singola matricola nel caso di movimentazione di un bene con 'Tipo gestione lotti Completa'.
+In caso di movimenti con causale definita di ' acquisizione' o 'dismissione' ed in presenza di un bene con 'Gestione lotti completa' verranno richieste anche le quantità per singola matricola.
+La sommatoria delle quantità delle singole matricole dovrà quadrare con la quantità indicata sulla riga del singolo bene.
+
+ 
+3.1	GESTIONE MOVIMENTI – DETTAGLIO LOTTI
+
+
+In presenza di una riga con cespite con ‘gestione a lotti completa’ ed una causale di acquisizione o dismissione è obbligatorio indicare le quantità acquisite o dimesse per ogni singola matricola.
+Le righe sono le matricole legate al cespite in oggetto le quantità sono le quantità legate al movimento.
+In testata viene presentata la quantità complessiva del movimento e la quantità residua.
+All’atto della conferma viene controllato che la sommatoria delle quantità sia congruente con la quantità impostata sul movimento.
+Le quantità verranno sommate o sottratte a seconda se la causale è di acquisizione o dismissione.  
+
+4	GESTIONE STORICO
+
+
+E' stata implementa la 'Gestione degli storici' per poter inserire e gestire le quantità di inizio periodo e del periodo per singola matricola nel caso di un bene con 'Tipo gestione lotti Completa'.
+In caso di storici con una quantità inizio periodo o una quantità del periodo diversa da zero verranno richieste anche le quantità per singola matricola.
+La sommatoria delle quantità delle singole matricole dovrà quadrare con la quantità indicata sullo storico del singolo bene.
+ 
+
+4.1	GESTIONE STORICO – DETTAGLIO LOTTI
+
+
+In presenza di un cespite con ‘gestione a lotti completa’ e delle quantità diverse da zero esiste il dettaglio delle singole matricole con le quantità di inizio periodo e le quantità del periodo.
+Queste informazioni, come per lo storico principale, sono generate in fase di ‘Calcolo’ o ‘Piano’ di ammortamento.
+
+Le righe sono le matricole legate al cespite in oggetto le quantità sono le quantità di inizio periodo (fine periodo precedente) e la quantità del periodo (sommatoria dei movimenti del periodo).
+In testata viene presentata la quantità inizio periodo e la quantità del periodo con le rispettive quantità residue.
+All’atto della conferma viene controllato che la sommatoria delle quantità sia congruente con le quantità presenti sullo storico del cespite in oggetto.
+
+5	Stampe
+
+
+Il dettaglio dei lotti con i relativi valori sono stati gestiti nelle seguenti elaborazioni:
+
+•	Stampa Parte attiva
+•	Stampa Parte passiva
+•	Stampa Registro
+•	Stampa Scheda
+
+Bisogna tenere presente che i valori espressi per singolo lotto sono calcolati proporzionando i valori dello storico con le quantità finali del singolo lotto.
