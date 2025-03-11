@@ -1,0 +1,113 @@
+
+1	GESTIONE REGOLE di AMMORTAMENTO
+
+Le regole di ammortamento rappresentano i metodi che si voglio applicare al proprio parco cespiti. 
+
+Ogni azienda gestisce almeno due regole di ammortamento, una fiscale ed una civilistica ed in più, se è interessata ad avere delle valutazioni di tipo gestionale-economico le regole diventano come minimo tre.
+
+Ad ogni cespite è indispensabile indicare a quale regola appartiene e le sue  caratteristiche (cat.fiscale, data inizio ammortamento, valore sul quale calcolare l'aliquota).
+Quindi si può intuire che la mole di dati che si è costretti a gestire è di un certo peso.
+
+A fronte di queste considerazioni si è pensato di creare degli automatismi per la gestione delle regole, tali automatismi sono di due tipi e, più precisamente:
+•	Interattivo, in fase di caricamento di un nuovo cespite
+•	Batch
+ 
+
+1.1	DEFINIZIONE REGOLE di AMMORTAMENTO
+
+La definizione della regola di ammortamento avviene tramite la tabella Regole di ammortamento presente nelle tabelle comportamentali aziendali.
+
+E' necessario definire:
+•	la regola principale
+•	le regole che si vogliono propagare in automatico
+
+
+In fase di creazione di una nuova anagrafica cespite verrà richiesta obbligatoriamente la regola definita come principale, mentre alla conferma verranno generate automaticamente, mutuandole dalla principale, le altre regole definite con 'Generazione automatica'.
+Successivamente le informazioni sulle regole possono essere modificate.
+
+
+1.2	ANAGRAFICA CESPITE - REGOLE di AMMORTAMENTO
+
+In fase di creazione di una nuova anagrafica cespite si dovrà caricare semplicemente la regola definita come principale ed alla conferma verranno generate automaticamente le altre regole definite con 'Generazione automatica'. 
+Successivamente le informazioni sulle regole possono essere modificate.
+
+
+1.3	POPOLAMENTO REGOLE di AMMORTAMENTO
+
+Questa funzione permette di generare in automatico, per ogni singolo cespite, le regole di ammortamento che sono state definite successivamente al caricamento dell'anagrafica dei cespiti. 
+La regola generata avrà le stesse caratteristiche della regola di riferimento impostata.
+Nel caso la regola esistesse non viene sovrascritta.
+ 
+2	GESTIONE AUTOMATICA CAMBIO CATEGORIA
+
+
+Ogni cespite appartiene ad una categoria fiscale che ne definisce il tipo e le aliquote di ammortamento.
+Nel corso di vita di un cespite può esserci la necessità di dover cambiare categoria, questo accade spesso nel caso di cespiti costruiti in economia.
+
+Fintanto che il cespite non entra in funzione o è in corso di costruzione  appartiene ad una determinata categoria.
+Quando il bene entra a far parte del ciclo produttivo aziendale deve essere spostato di categoria.
+ 
+
+2.1	DEFINIZIONE DEL CAMBIO CATEGORIA
+
+
+La definizione del passaggio di categoria viene impostata per ogni singolo cespite nel TAB ‘Ammortamenti con l’apposito pulsante.
+Bisogna definire il periodo in cui entra in vigore  il cambio di categoria, la categoria attuale,la categoria nuova e se si deve generare lo storico di storno della vecchia categoria.
+Così facendo in fase di calcolo dell'ammortamento si otterranno per lo stesso periodo due storici. Il primo con la categoria vecchia e i relativi importi che stornano tutti i singoli valori e il secondo storico con la categoria nuova ed i relativi valori.
+
+Qualora non si voglia tener traccia dello storico di storno non bisogna impostare il campo 'Generazione storno storico.
+Tenere presente che la categoria di riferimento per le stampe ed interrogazioni è sempre quella definita nel TAB 'Ammortamenti' e quindi deve essere sempre l'ultima di appartenenza.
+ 
+
+3	ANALISI SITUAZIONE CESPITE
+
+Questa funzione permette di avere un quadro sintetico della posizione di un singolo cespite e tramite dei bottoni navigare nel dettaglio dello storico.
+
+Tale funzione è richiamabile da più punti dell'applicazione ed è rappresentata dalla seguente icona:
+La funzione fa riferimento alla tabella 'Scenari operativi' per prelevare, in alcuni casi, la 'Regola di ammortamento' ed il 'Periodo di riferimento'.
+
+ 
+3.1	DEFINIZIONE SCENARI OPERATIVI
+
+In questa tabella è necessario definire almeno uno scenario operativo e indicarlo come ‘Default’ in modo tale che la funzione ‘Situazione Cespiti’ possa far riferimento per visualizzare i dati richiesti.
+In questo esempio la funzione ‘Situazione Cespite’ visualizzerà, in mancanza di informazioni quali regola e periodo, la situazione del cespite della regola di ammortamento ‘FISCA’ ed il periodo ‘2004’. 
+
+ 
+3.2	SITUAZIONE CESPITE
+
+La situazione cespite si presenta nel modo seguente:
+Dall’elenco delle categorie fiscali in cui il cespite è stato movimentato per il periodo è possibile:
+•	Visualizzare la ‘Situazione’	
+•	Interrogare lo storico	              
+ 
+4	CONTABILIZZAZIONE QUOTE DI AMMORTAMENTO
+
+Questa funzione permette di contabilizzare le quote di ammortamento.
+Le quote di ammortamento possono essere di una qualsiasi ‘Regola di ammortamento’ gestita.
+Vi è inoltre la possibilità di:
+
+•	eseguire solo una stampa di controllo
+•	generare movimenti definitivi o provvisori
+•	eliminare una contabilizzazione già eseguitaGRUPPI CONTABILI
+
+I gruppi contabili sono indispensabili per poter effettuare la contabilizzazione delle quote di ammortamento.
+Per ogni gruppo e regola di ammortamento è possibile indicare:
+
+•	Voce quota ammortamento ordinario deducibile e indeducibile
+•	Voce quota ammortamento anticipato deducibile e indeducibile
+•	Voce quota ammortamento accelerato deducibile e indeducibile
+•	Le rispettive voci del fondo ammortamento deducibile e indeducibile
+•	Causale contabile per effettuare la transazione
+•	Tipo transazione da effettuare Raggruppata per gruppo o dettaglio di singolo cespite
+
+Ad ogni cespite che si vuole contabilizzare bisogna attribuire il gruppo di appartenenza.
+
+4.1	CONTABILIZZAZIONE QUOTE
+
+
+La funzione ha lo scopo principale di contabilizzare le quote di ammortamento in contabilità.
+E’ possibile contabilizzare le quote di qualsiasi tipo di storico (provvisorio, definitivo e piano).
+
+La funzione dà inoltre la possibilità di eliminare completamente una contabilizzazione.
+Tutti gli storici che sono entrati a far parte di una contabilizzazione non possono più essere modificati ma solo interrogati.
+Nella gestione dello storico è stato aggiunto un bottone per interrogare la transazione contabile generata da tale funzione.
