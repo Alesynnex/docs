@@ -38,16 +38,15 @@ Quando il bene entra a far parte del ciclo produttivo aziendale deve essere spos
  
 2.1	DEFINIZIONE DEL CAMBIO CATEGORIA
 
-La definizione del passaggio di categoria viene impostata per ogni singolo cespite nel TAB ‘Ammortamenti con l’apposito pulsante.
-Bisogna definire il periodo in cui entra in vigore  il cambio di categoria, la categoria attuale,la categoria nuova e se si deve generare lo storico di storno della vecchia categoria.
+La definizione del passaggio di categoria viene impostata per ogni singolo cespite nel TAB 'Ammortamenti' con l’apposito pulsante.
+Bisogna definire il periodo in cui entra in vigore  il cambio di categoria, la categoria attuale, la categoria nuova e se si deve generare lo storico di storno della vecchia categoria.
 Così facendo in fase di calcolo dell'ammortamento si otterranno per lo stesso periodo due storici. Il primo con la categoria vecchia e i relativi importi che stornano tutti i singoli valori e il secondo storico con la categoria nuova ed i relativi valori.
-Qualora non si voglia tener traccia dello storico di storno non bisogna impostare il campo 'Generazione storno storico.
+Qualora non si voglia tener traccia dello storico di storno non bisogna impostare il campo Generazione storno storico.
 Tenere presente che la categoria di riferimento per le stampe ed interrogazioni è sempre quella definita nel TAB 'Ammortamenti' e quindi deve essere sempre l'ultima di appartenenza.
  
 3	ANALISI SITUAZIONE CESPITE
 
 Questa funzione permette di avere un quadro sintetico della posizione di un singolo cespite e tramite dei bottoni navigare nel dettaglio dello storico.
-Tale funzione è richiamabile da più punti dell'applicazione ed è rappresentata dalla seguente icona:
 La funzione fa riferimento alla tabella 'Scenari operativi' per prelevare, in alcuni casi, la 'Regola di ammortamento' ed il 'Periodo di riferimento'.
 
 3.1	DEFINIZIONE SCENARI OPERATIVI
@@ -101,7 +100,6 @@ Un bene può essere gestito singolarmente oppure come lotto.
 Un esemplificazione di tale concetto è rappresentato da un acquisto di 100 sedie uguali.
 Tale acquisto può essere gestito con il caricamento di 100 anagrafiche cespiti oppure con il caricamento di una sola anagrafica (rappresentante delle 100 sedie).
 Nel secondo caso entra in gioco il concetto di lotto cioè una sola anagrafica composta da 100 pezzi tutti uguali, ogni pezzo può essere rappresentato da una  matricola.
-
 Il lotto ha due tipi di gestione:
 •	solo informativa, quindi posso dettagliare le singole matricole e indicare un ubicazione per singola matricola
 •	Completa, quindi oltre alle infomazioni anagrafiche gestire le quantità ed i valori per singola matricola. Questo può essere interessante quando la matricola è un gruppo di pezzi (esempio acquisto 110 sedie e ho la necessità di indicare il numero di sedie per ogni singola sede)
@@ -116,16 +114,16 @@ La gestione completa dei lotti deve permette:
 
 Per ogni singolo bene è possibile definire la tipologia di gestione dei lotti.
 I valori ammessi sono:
-•	0 - No gestione lotti
-•	1 - Si gestione lotti solo informativa
-•	2 - Si gestione lotti completa
+•	1 - No gestione lotti
+•	2 - Si gestione lotti solo informativa
+•	3 - Si gestione lotti completa
 
-Nel primo caso (0 - No gestione lotti) il bene è rappresentato da un unico pezzo fisico identificato dal codice cespite.
+Nel primo caso (1 - No gestione lotti) il bene è rappresentato da un unico pezzo fisico identificato dal codice cespite.
 I valori sia come movimenti sia come storici sono attribuiti al codice del bene.
-Nel secondo caso (1 - Si gestione lotti solo informativa) il bene è rappresentato da un insieme di pezzi omogenei identificati dalla matricola.
+Nel secondo caso (2 - Si gestione lotti solo informativa) il bene è rappresentato da un insieme di pezzi omogenei identificati dalla matricola.
 Per ogni matricola è possibile indicare una descrizione ed una ubicazione.
 I valori sia come movimenti sia come storici sono attribuiti al codice del bene.
-Nel terzo caso (1 - Si gestione lotti completa) il bene è rappresentato da un insieme di pezzi omogenei identificati dalla matricola.
+Nel terzo caso (3 - Si gestione lotti completa) il bene è rappresentato da un insieme di pezzi omogenei identificati dalla matricola.
 Per ogni matricola è possibile indicare una descrizione ed una ubicazione.
 I valori sia come movimenti sia come storici sono attribuiti al codice del bene ed alle singole matricole.
 
@@ -210,6 +208,6 @@ La funzione permette di generare / eliminare le registrazioni di dismissione ces
 I movimenti creati in contabilità hanno un legame con i movimenti cespiti e non viene permessa né la modifica né la cancellazione.
 Questo vale anche in caso di modifica / cancellazione del movimento di dismissione cespite.
 Una volta contabilizzato il movimento di dismissione non è più possibile modificare né il movimento cespite né la transazione contabile associata.
-Qualora ci sia la necessità, si può operare come segue.
+Qualora ci sia la necessità, si può operare come segue:
 Utilizzare la funzionalità di ‘Contabilizza dismissione’ impostando il flag ‘Elimina contabilizzazione’. In questo caso vengono eliminate le registrazioni contabili all’interno del range di date e vengono resi modificabili / annullabili le registrazioni cespiti.
 Nel caso si voglia eliminare una transazione contabile legata ad un specifico movimenti cespiti si deve richiamare la ‘Gestione movimenti cespiti’ e dal contenitore con l’apposito bottone procedere alla eliminazione della transazione contabile collegata.
