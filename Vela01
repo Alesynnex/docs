@@ -1,36 +1,27 @@
-
 1	GESTIONE REGOLE di AMMORTAMENTO
 
 Le regole di ammortamento rappresentano i metodi che si voglio applicare al proprio parco cespiti. 
-
 Ogni azienda gestisce almeno due regole di ammortamento, una fiscale ed una civilistica ed in più, se è interessata ad avere delle valutazioni di tipo gestionale-economico le regole diventano come minimo tre.
-
 Ad ogni cespite è indispensabile indicare a quale regola appartiene e le sue  caratteristiche (cat.fiscale, data inizio ammortamento, valore sul quale calcolare l'aliquota).
 Quindi si può intuire che la mole di dati che si è costretti a gestire è di un certo peso.
-
 A fronte di queste considerazioni si è pensato di creare degli automatismi per la gestione delle regole, tali automatismi sono di due tipi e, più precisamente:
 •	Interattivo, in fase di caricamento di un nuovo cespite
 •	Batch
  
-
 1.1	DEFINIZIONE REGOLE di AMMORTAMENTO
 
 La definizione della regola di ammortamento avviene tramite la tabella Regole di ammortamento presente nelle tabelle comportamentali aziendali.
-
 E' necessario definire:
 •	la regola principale
 •	le regole che si vogliono propagare in automatico
 
-
 In fase di creazione di una nuova anagrafica cespite verrà richiesta obbligatoriamente la regola definita come principale, mentre alla conferma verranno generate automaticamente, mutuandole dalla principale, le altre regole definite con 'Generazione automatica'.
 Successivamente le informazioni sulle regole possono essere modificate.
-
 
 1.2	ANAGRAFICA CESPITE - REGOLE di AMMORTAMENTO
 
 In fase di creazione di una nuova anagrafica cespite si dovrà caricare semplicemente la regola definita come principale ed alla conferma verranno generate automaticamente le altre regole definite con 'Generazione automatica'. 
 Successivamente le informazioni sulle regole possono essere modificate.
-
 
 1.3	POPOLAMENTO REGOLE di AMMORTAMENTO
 
@@ -40,38 +31,29 @@ Nel caso la regola esistesse non viene sovrascritta.
  
 2	GESTIONE AUTOMATICA CAMBIO CATEGORIA
 
-
 Ogni cespite appartiene ad una categoria fiscale che ne definisce il tipo e le aliquote di ammortamento.
 Nel corso di vita di un cespite può esserci la necessità di dover cambiare categoria, questo accade spesso nel caso di cespiti costruiti in economia.
-
 Fintanto che il cespite non entra in funzione o è in corso di costruzione  appartiene ad una determinata categoria.
 Quando il bene entra a far parte del ciclo produttivo aziendale deve essere spostato di categoria.
  
-
 2.1	DEFINIZIONE DEL CAMBIO CATEGORIA
-
 
 La definizione del passaggio di categoria viene impostata per ogni singolo cespite nel TAB ‘Ammortamenti con l’apposito pulsante.
 Bisogna definire il periodo in cui entra in vigore  il cambio di categoria, la categoria attuale,la categoria nuova e se si deve generare lo storico di storno della vecchia categoria.
 Così facendo in fase di calcolo dell'ammortamento si otterranno per lo stesso periodo due storici. Il primo con la categoria vecchia e i relativi importi che stornano tutti i singoli valori e il secondo storico con la categoria nuova ed i relativi valori.
-
 Qualora non si voglia tener traccia dello storico di storno non bisogna impostare il campo 'Generazione storno storico.
 Tenere presente che la categoria di riferimento per le stampe ed interrogazioni è sempre quella definita nel TAB 'Ammortamenti' e quindi deve essere sempre l'ultima di appartenenza.
  
-
 3	ANALISI SITUAZIONE CESPITE
 
 Questa funzione permette di avere un quadro sintetico della posizione di un singolo cespite e tramite dei bottoni navigare nel dettaglio dello storico.
-
 Tale funzione è richiamabile da più punti dell'applicazione ed è rappresentata dalla seguente icona:
 La funzione fa riferimento alla tabella 'Scenari operativi' per prelevare, in alcuni casi, la 'Regola di ammortamento' ed il 'Periodo di riferimento'.
 
- 
 3.1	DEFINIZIONE SCENARI OPERATIVI
 
 In questa tabella è necessario definire almeno uno scenario operativo e indicarlo come ‘Default’ in modo tale che la funzione ‘Situazione Cespiti’ possa far riferimento per visualizzare i dati richiesti.
 In questo esempio la funzione ‘Situazione Cespite’ visualizzerà, in mancanza di informazioni quali regola e periodo, la situazione del cespite della regola di ammortamento ‘FISCA’ ed il periodo ‘2004’. 
-
  
 3.2	SITUAZIONE CESPITE
 
@@ -85,14 +67,14 @@ Dall’elenco delle categorie fiscali in cui il cespite è stato movimentato per
 Questa funzione permette di contabilizzare le quote di ammortamento.
 Le quote di ammortamento possono essere di una qualsiasi ‘Regola di ammortamento’ gestita.
 Vi è inoltre la possibilità di:
-
 •	eseguire solo una stampa di controllo
 •	generare movimenti definitivi o provvisori
-•	eliminare una contabilizzazione già eseguitaGRUPPI CONTABILI
+•	eliminare una contabilizzazione già eseguita
+
+4.1 GRUPPI CONTABILI
 
 I gruppi contabili sono indispensabili per poter effettuare la contabilizzazione delle quote di ammortamento.
 Per ogni gruppo e regola di ammortamento è possibile indicare:
-
 •	Voce quota ammortamento ordinario deducibile e indeducibile
 •	Voce quota ammortamento anticipato deducibile e indeducibile
 •	Voce quota ammortamento accelerato deducibile e indeducibile
@@ -102,19 +84,17 @@ Per ogni gruppo e regola di ammortamento è possibile indicare:
 
 Ad ogni cespite che si vuole contabilizzare bisogna attribuire il gruppo di appartenenza.
 
-4.1	CONTABILIZZAZIONE QUOTE
-
+4.2	CONTABILIZZAZIONE QUOTE
 
 La funzione ha lo scopo principale di contabilizzare le quote di ammortamento in contabilità.
 E’ possibile contabilizzare le quote di qualsiasi tipo di storico (provvisorio, definitivo e piano).
-
 La funzione dà inoltre la possibilità di eliminare completamente una contabilizzazione.
 Tutti gli storici che sono entrati a far parte di una contabilizzazione non possono più essere modificati ma solo interrogati.
 Nella gestione dello storico è stato aggiunto un bottone per interrogare la transazione contabile generata da tale funzione.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
 MONOGRAFIE BENI A LOTTI
-
 
 1	INTRODUZIONE
 Un bene può essere gestito singolarmente oppure come lotto.
@@ -131,13 +111,11 @@ La gestione completa dei lotti deve permette:
 2.	di poter indicare in fase di acquisizione di un bene a lotti le quantità di ogni singola matricola (nel caso la matricola rappresenti un insieme di pezzi allocati in una determinata ubicazione)
 3.	di poter indicare in fase di dismissione di un bene a lotti le matricole dimesse ed eventualmente le quantità
 4.	analizzare le informazioni quali valore di bilancio, fondi, quote di ammortamento, per singola matricola.
- 
 
 2	GESTIONE ANAGRAFICA BENI
 
 Per ogni singolo bene è possibile definire la tipologia di gestione dei lotti.
 I valori ammessi sono:
-
 •	0 - No gestione lotti
 •	1 - Si gestione lotti solo informativa
 •	2 - Si gestione lotti completa
@@ -151,16 +129,13 @@ Nel terzo caso (1 - Si gestione lotti completa) il bene è rappresentato da un i
 Per ogni matricola è possibile indicare una descrizione ed una ubicazione.
 I valori sia come movimenti sia come storici sono attribuiti al codice del bene ed alle singole matricole.
 
-
 3	GESTIONE MOVIMENTI
 
 E' stata implementa la 'Gestione dei movimenti' per poter inserire e gestire le quantità per singola matricola nel caso di movimentazione di un bene con 'Tipo gestione lotti Completa'.
 In caso di movimenti con causale definita di ' acquisizione' o 'dismissione' ed in presenza di un bene con 'Gestione lotti completa' verranno richieste anche le quantità per singola matricola.
 La sommatoria delle quantità delle singole matricole dovrà quadrare con la quantità indicata sulla riga del singolo bene.
-
  
 3.1	GESTIONE MOVIMENTI – DETTAGLIO LOTTI
-
 
 In presenza di una riga con cespite con ‘gestione a lotti completa’ ed una causale di acquisizione o dismissione è obbligatorio indicare le quantità acquisite o dimesse per ogni singola matricola.
 Le righe sono le matricole legate al cespite in oggetto le quantità sono le quantità legate al movimento.
@@ -170,30 +145,71 @@ Le quantità verranno sommate o sottratte a seconda se la causale è di acquisiz
 
 4	GESTIONE STORICO
 
-
 E' stata implementa la 'Gestione degli storici' per poter inserire e gestire le quantità di inizio periodo e del periodo per singola matricola nel caso di un bene con 'Tipo gestione lotti Completa'.
 In caso di storici con una quantità inizio periodo o una quantità del periodo diversa da zero verranno richieste anche le quantità per singola matricola.
 La sommatoria delle quantità delle singole matricole dovrà quadrare con la quantità indicata sullo storico del singolo bene.
- 
 
 4.1	GESTIONE STORICO – DETTAGLIO LOTTI
 
-
 In presenza di un cespite con ‘gestione a lotti completa’ e delle quantità diverse da zero esiste il dettaglio delle singole matricole con le quantità di inizio periodo e le quantità del periodo.
 Queste informazioni, come per lo storico principale, sono generate in fase di ‘Calcolo’ o ‘Piano’ di ammortamento.
-
 Le righe sono le matricole legate al cespite in oggetto le quantità sono le quantità di inizio periodo (fine periodo precedente) e la quantità del periodo (sommatoria dei movimenti del periodo).
 In testata viene presentata la quantità inizio periodo e la quantità del periodo con le rispettive quantità residue.
 All’atto della conferma viene controllato che la sommatoria delle quantità sia congruente con le quantità presenti sullo storico del cespite in oggetto.
 
 5	Stampe
 
-
 Il dettaglio dei lotti con i relativi valori sono stati gestiti nelle seguenti elaborazioni:
-
 •	Stampa Parte attiva
 •	Stampa Parte passiva
 •	Stampa Registro
 •	Stampa Scheda
 
 Bisogna tenere presente che i valori espressi per singolo lotto sono calcolati proporzionando i valori dello storico con le quantità finali del singolo lotto.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+MONOGRAFIE DISMISSIONE BENE
+
+1	INTRODUZIONE
+
+La dismissione di un bene genera una serie di registrazioni contabili con dati che possono essere presunti solo dal mondo cespiti quali:
+- Valore di Bilancio
+- Rettifiche Fondi
+- Plus/Minusvalenza
+
+Tali valori sono quelli che vengono calcolati In modo automatico all'atto della registrazione di vendita di un cespite con l'indicazione dell'importo eventualmente ricavato.
+Con questa funzionalità si è voluto dare la possibilità di generare in automatico le registrazioni contabili e tenerle legate al mondo cespiti.
+
+2	TABELLA CAUSALE MOVIMENTI
+
+Per ogni singola causale bisogna identificare la Natura contabile cioè come il movimento deve essere contabilizzato.
+I valori ammessi sono:
+•	00 - Non contabilizzo
+•	01 - Costo storico
+•	02 - Rivalutazione
+•	03 - Valore di bilancio
+•	04 - Plu-Minusvalenza
+•	05 - Fondo ordinario deducibile
+•	06 - Fondo anticipato deducibile
+•	07 - Fondo accelerato deducibile
+•	08 - Fondo ordinario indeducibile
+•	09 - Fondo anticipato indeducibile
+•	10 - Fondo accelerato indeducibile
+•	11 - Valore indeducibile
+
+Tendenzialmente tutte le causali automatiche legate ad una dismissione devono avere una 'Natura contabile' diversa da '00'
+
+3	TABELLA RAGGRUPPAMENTI CONTABILI
+
+La tabella in oggetto serve per identificare i conti e le causali contabili che devono essere utilizzate per la contabilizzazione delle quote di ammortamento. In tale tabella è stata aggiunta una 'Tab' dove devono essere indicati i conti per 'Natura contabile' e le rispettive causali. 
+Tali informazioni verranno utilizzate per la contabilizzazione dei movimenti di dismissione. 
+
+4	CONTABILIZZA DISMISSIONE CESPITE
+
+La funzione permette di generare / eliminare le registrazioni di dismissione cespite per una determinata regola e range di date.
+I movimenti creati in contabilità hanno un legame con i movimenti cespiti e non viene permessa né la modifica né la cancellazione.
+Questo vale anche in caso di modifica / cancellazione del movimento di dismissione cespite.
+Una volta contabilizzato il movimento di dismissione non è più possibile modificare né il movimento cespite né la transazione contabile associata.
+Qualora ci sia la necessità, si può operare come segue.
+Utilizzare la funzionalità di ‘Contabilizza dismissione’ impostando il flag ‘Elimina contabilizzazione’. In questo caso vengono eliminate le registrazioni contabili all’interno del range di date e vengono resi modificabili / annullabili le registrazioni cespiti.
+Nel caso si voglia eliminare una transazione contabile legata ad un specifico movimenti cespiti si deve richiamare la ‘Gestione movimenti cespiti’ e dal contenitore con l’apposito bottone procedere alla eliminazione della transazione contabile collegata.
