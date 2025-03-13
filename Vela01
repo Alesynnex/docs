@@ -5,15 +5,15 @@ Ogni azienda gestisce almeno due regole di ammortamento, una fiscale ed una civi
 Ad ogni cespite è indispensabile indicare a quale regola appartiene e le sue  caratteristiche (cat.fiscale, data inizio ammortamento, valore sul quale calcolare l'aliquota).
 Quindi si può intuire che la mole di dati che si è costretti a gestire è di un certo peso.
 A fronte di queste considerazioni si è pensato di creare degli automatismi per la gestione delle regole, tali automatismi sono di due tipi e, più precisamente:
-•	Interattivo, in fase di caricamento di un nuovo cespite
-•	Batch
+Interattivo, in fase di caricamento di un nuovo cespite
+Batch
  
 1.1	DEFINIZIONE REGOLE di AMMORTAMENTO
 
 La definizione della regola di ammortamento avviene tramite la tabella Regole di ammortamento presente nelle tabelle comportamentali aziendali.
 E' necessario definire:
-•	la regola principale
-•	le regole che si vogliono propagare in automatico
+la regola principale
+le regole che si vogliono propagare in automatico
 
 In fase di creazione di una nuova anagrafica cespite verrà richiesta obbligatoriamente la regola definita come principale, mentre alla conferma verranno generate automaticamente, mutuandole dalla principale, le altre regole definite con 'Generazione automatica'.
 Successivamente le informazioni sulle regole possono essere modificate.
@@ -58,28 +58,28 @@ In questo esempio la funzione ‘Situazione Cespite’ visualizzerà, in mancanz
 
 La situazione cespite si presenta nel modo seguente:
 Dall’elenco delle categorie fiscali in cui il cespite è stato movimentato per il periodo è possibile:
-•	Visualizzare la ‘Situazione’	
-•	Interrogare lo storico	              
+Visualizzare la ‘Situazione’	
+Interrogare lo storico	              
  
 4	CONTABILIZZAZIONE QUOTE DI AMMORTAMENTO
 
 Questa funzione permette di contabilizzare le quote di ammortamento.
 Le quote di ammortamento possono essere di una qualsiasi ‘Regola di ammortamento’ gestita.
 Vi è inoltre la possibilità di:
-•	eseguire solo una stampa di controllo
-•	generare movimenti definitivi o provvisori
-•	eliminare una contabilizzazione già eseguita
+eseguire solo una stampa di controllo
+generare movimenti definitivi o provvisori
+eliminare una contabilizzazione già eseguita
 
 4.1 GRUPPI CONTABILI
 
 I gruppi contabili sono indispensabili per poter effettuare la contabilizzazione delle quote di ammortamento.
 Per ogni gruppo e regola di ammortamento è possibile indicare:
-•	Voce quota ammortamento ordinario deducibile e indeducibile
-•	Voce quota ammortamento anticipato deducibile e indeducibile
-•	Voce quota ammortamento accelerato deducibile e indeducibile
-•	Le rispettive voci del fondo ammortamento deducibile e indeducibile
-•	Causale contabile per effettuare la transazione
-•	Tipo transazione da effettuare Raggruppata per gruppo o dettaglio di singolo cespite
+Voce quota ammortamento ordinario deducibile e indeducibile
+Voce quota ammortamento anticipato deducibile e indeducibile
+Voce quota ammortamento accelerato deducibile e indeducibile
+Le rispettive voci del fondo ammortamento deducibile e indeducibile
+Causale contabile per effettuare la transazione
+Tipo transazione da effettuare Raggruppata per gruppo o dettaglio di singolo cespite
 
 Ad ogni cespite che si vuole contabilizzare bisogna attribuire il gruppo di appartenenza.
 
@@ -101,8 +101,8 @@ Un esemplificazione di tale concetto è rappresentato da un acquisto di 100 sedi
 Tale acquisto può essere gestito con il caricamento di 100 anagrafiche cespiti oppure con il caricamento di una sola anagrafica (rappresentante delle 100 sedie).
 Nel secondo caso entra in gioco il concetto di lotto cioè una sola anagrafica composta da 100 pezzi tutti uguali, ogni pezzo può essere rappresentato da una  matricola.
 Il lotto ha due tipi di gestione:
-•	solo informativa, quindi posso dettagliare le singole matricole e indicare un ubicazione per singola matricola
-•	Completa, quindi oltre alle infomazioni anagrafiche gestire le quantità ed i valori per singola matricola. Questo può essere interessante quando la matricola è un gruppo di pezzi (esempio acquisto 110 sedie e ho la necessità di indicare il numero di sedie per ogni singola sede)
+solo informativa, quindi posso dettagliare le singole matricole e indicare un ubicazione per singola matricola completa, quindi oltre alle infomazioni anagrafiche gestire le quantità ed i valori per singola matricola. 
+Questo può essere interessante quando la matricola è un gruppo di pezzi (esempio acquisto 110 sedie e ho la necessità di indicare il numero di sedie per ogni singola sede)
 
 La gestione completa dei lotti deve permette:
 1.	di dettagliare la composizione di un singolo bene indicando matricola, ubicazione e una descrizione
@@ -114,9 +114,9 @@ La gestione completa dei lotti deve permette:
 
 Per ogni singolo bene è possibile definire la tipologia di gestione dei lotti.
 I valori ammessi sono:
-•	1 - No gestione lotti
-•	2 - Si gestione lotti solo informativa
-•	3 - Si gestione lotti completa
+ - No gestione lotti
+ - Si gestione lotti solo informativa
+ - Si gestione lotti completa
 
 Nel primo caso (1 - No gestione lotti) il bene è rappresentato da un unico pezzo fisico identificato dal codice cespite.
 I valori sia come movimenti sia come storici sono attribuiti al codice del bene.
@@ -158,10 +158,10 @@ All’atto della conferma viene controllato che la sommatoria delle quantità si
 5	Stampe
 
 Il dettaglio dei lotti con i relativi valori sono stati gestiti nelle seguenti elaborazioni:
-•	Stampa Parte attiva
-•	Stampa Parte passiva
-•	Stampa Registro
-•	Stampa Scheda
+Stampa Parte attiva
+Stampa Parte passiva
+Stampa Registro
+Stampa Scheda
 
 Bisogna tenere presente che i valori espressi per singolo lotto sono calcolati proporzionando i valori dello storico con le quantità finali del singolo lotto.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -182,18 +182,18 @@ Con questa funzionalità si è voluto dare la possibilità di generare in automa
 
 Per ogni singola causale bisogna identificare la Natura contabile cioè come il movimento deve essere contabilizzato.
 I valori ammessi sono:
-•	00 - Non contabilizzo
-•	01 - Costo storico
-•	02 - Rivalutazione
-•	03 - Valore di bilancio
-•	04 - Plu-Minusvalenza
-•	05 - Fondo ordinario deducibile
-•	06 - Fondo anticipato deducibile
-•	07 - Fondo accelerato deducibile
-•	08 - Fondo ordinario indeducibile
-•	09 - Fondo anticipato indeducibile
-•	10 - Fondo accelerato indeducibile
-•	11 - Valore indeducibile
+ - Non contabilizzo
+ - Costo storico
+ - Rivalutazione
+ - Valore di bilancio
+ - Plu-Minusvalenza
+ - Fondo ordinario deducibile
+ - Fondo anticipato deducibile
+ - Fondo accelerato deducibile
+ - Fondo ordinario indeducibile
+ - Fondo anticipato indeducibile
+ - Fondo accelerato indeducibile
+ - Valore indeducibile
 
 Tendenzialmente tutte le causali automatiche legate ad una dismissione devono avere una 'Natura contabile' diversa da '00'
 
